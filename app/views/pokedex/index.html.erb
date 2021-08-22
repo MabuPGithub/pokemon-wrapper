@@ -1,0 +1,38 @@
+<%= form_tag pokedex_index_url, :method => "get" do %>
+  <%= label_tag(:search, "Provide an ID to search") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :id => nil) %>
+<% end %>
+
+<h1>Pokemon</h1>
+<% @pokemon.each do |key, value| %>
+    <% if key == 'name' || key == 'type' || key == 'id' %>
+    <p><%= "#{key.to_s}"': ' "#{value.to_s}" %></p>
+    <% end %>
+<% end %>
+
+<h1>Evolution</h1>
+<% @evolution.each do |key, value| %>
+    <p><%= "#{key.to_s}"': ' "#{value.to_s}" %></p>
+<% end %>
+
+<h1>Nature</h1>
+<% @nature.each do |key, value| %>
+    <% if key == 'name' || key == 'id' %>
+        <p><%= "#{key.to_s}"': ' "#{value.to_s}" %></p>
+    <% end %>
+<% end %>
+
+<h1>Habitat</h1>
+<% @habitat.each do |key, value| %>
+    <% if key == 'name' || key == 'id' %>
+        <p><%= "#{key.to_s}"': ' "#{value.to_s}" %></p>
+    <% end %>
+<% end %>
+
+<h1>Color</h1>
+<% @color.each do |key, value| %>
+    <% if key == 'name' || key == 'id' %>
+        <p><%= "#{key.to_s}"': ' "#{value.to_s}" %></p>
+    <% end %>
+<% end %>

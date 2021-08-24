@@ -35,7 +35,7 @@ API Wrapper for PokeAPI via Ruby on Rails. Visit the API at https://pokeapi.co/d
                 @response = connection.public_send(http_method, endpoint, params)
                 parsed_response = JSON.parse(@response.body)
             end
-## Get Set up a connection:
+## Set up a connection:
             def connection
                 @connection ||= Faraday.new(API_ENDPOINT) do |f|
                 f.request :url_encoded
